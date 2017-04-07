@@ -1,7 +1,6 @@
-FROM bash
+FROM alpine
 MAINTAINER bzohdy
-RUN apk --no-cache add curl zip unzip git
-RUN curl -s "https://get.sdkman.io" | bash
-RUN cat $HOME/.sdkman/bin/sdkman-init.sh | bash
-RUN ln -sf /usr/local/bin/bash /bin/sh
-CMD /bin/sh
+RUN apk update && apk --no-cache add curl zip unzip git bash \
+	&& curl -s "https://get.sdkman.io" | /bin/bash \
+	&& cat $HOME/.sdkman/bin/sdkman-init.sh | /bin/bash
+CMD /bin/bash
