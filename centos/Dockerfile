@@ -1,8 +1,9 @@
-FROM centos
+FROM bzohdy/java:centos
 MAINTAINER bzohdy
+ENV SDKMAN_DIR /opt/sdkman
 RUN yum -y update
 RUN yum -y install which zip unzip git
 RUN curl -s "https://get.sdkman.io" | bash
-RUN source "$HOME/.sdkman/bin/sdkman-init.sh";
+RUN source "$SDKMAN_DIR/bin/sdkman-init.sh";
 RUN yum clean all
-ENTRYPOINT /bin/bash
+CMD /bin/bash
