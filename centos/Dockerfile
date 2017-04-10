@@ -1,4 +1,4 @@
-FROM bzohdy/java:centos
+FROM bzohdy/java:centos-jdk7
 MAINTAINER bzohdy
 ENV SDKMAN_DIR /opt/sdkman
 RUN yum -y update
