@@ -1,4 +1,4 @@
-FROM bzohdy/java:alpine
+FROM bzohdy/java:alpine-jdk7
 MAINTAINER bzohdy
 ENV SDKMAN_DIR /opt/sdkman
 RUN apk update && apk --no-cache add curl zip unzip git bash \
